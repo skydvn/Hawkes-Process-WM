@@ -1,0 +1,36 @@
+dyn:
+    typ: rssm
+    rssm:
+      deter: 4096
+      hidden: 2048
+      stoch: 32
+      classes: 32
+      # ... (existing keys unchanged)
+    hawkes:
+      # Inherited from RSSM
+      deter: 4096
+      hidden: 2048
+      stoch: 32
+      classes: 32
+      norm: rms
+      act: gelu
+      unroll: false
+      unimix: 0.01
+      outscale: 1.0
+      imglayers: 2
+      obslayers: 1
+      dynlayers: 1
+      absolute: false
+      blocks: 8
+      free_nats: 1.0
+      # Hawkes-specific
+      num_events: 8
+      haw_hidden: 256
+      haw_embed: 128
+      haw_kl_balance: 0.1
+      haw_ent_target: 0.5
+      haw_init_alpha: 0.01
+      haw_init_beta: 1.0
+      haw_init_mu: 0.1
+      haw_gumbel_tau: 1.0
+      haw_use_supervision: false
